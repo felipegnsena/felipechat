@@ -13,7 +13,8 @@ class Usuario {
 
     Map<String, dynamic> map = {
       "nome" : this.nome,
-      "email" : this.email
+      "email" : this.email,
+      "urlImagem" : this.urlImagem
     };
 
     return map;

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "335742658971",
+    "project_id": "felipechat-f044a",
+    "storage_bucket": "felipechat-f044a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:335742658971:android:42a7207062065f36ec993e",
+        "android_client_info": {
+          "package_name": "com.felipechat.felipechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "335742658971-auip0qipp1i1net18tt0gea274d2elpg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN4GFiuqheGvOLiZ2wTEr1AsrIlGonmIA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "335742658971-auip0qipp1i1net18tt0gea274d2elpg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

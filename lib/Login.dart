@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'Cadastro.dart';
@@ -12,7 +13,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
 
-  TextEditingController _controllerEmail = TextEditingController(text: "jamilton@gmail.com");
+  TextEditingController _controllerEmail = TextEditingController(text: "felipegnsena@gmail.com");
   TextEditingController _controllerSenha = TextEditingController(text: "1234567");
   String _mensagemErro = "";
 
@@ -65,6 +66,7 @@ class _LoginState extends State<Login> {
     }).catchError((error){
 
       setState(() {
+        print(error.toString());
         _mensagemErro = "Erro ao autenticar usuário, verifique e-mail e senha e tente novamente!";
       });
 
@@ -87,6 +89,7 @@ class _LoginState extends State<Login> {
 
   @override
   void initState() {
+    Firebase.initializeApp();
     _verificarUsuarioLogado();
     super.initState();
   }
@@ -95,7 +98,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(color: Color(0xff075E54)),
+        decoration: BoxDecoration(color: Color(0xffa4cefa)),
         padding: EdgeInsets.all(16),
         child: Center(
           child: SingleChildScrollView(
@@ -105,7 +108,7 @@ class _LoginState extends State<Login> {
                 Padding(
                   padding: EdgeInsets.only(bottom: 32),
                   child: Image.asset(
-                    "imagens/logo.png",
+                    "imagens/felipechat.png",
                     width: 200,
                     height: 150,
                   ),
@@ -116,7 +119,7 @@ class _LoginState extends State<Login> {
                     controller: _controllerEmail,
                     autofocus: true,
                     keyboardType: TextInputType.emailAddress,
-                    style: TextStyle(fontSize: 20),
+                    style: TextStyle(fontSize: 20, color: Color(0xff083460)),
                     decoration: InputDecoration(
                         contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
                         hintText: "E-mail",
@@ -130,7 +133,7 @@ class _LoginState extends State<Login> {
                   controller: _controllerSenha,
                   obscureText: true,
                   keyboardType: TextInputType.text,
-                  style: TextStyle(fontSize: 20),
+                  style: TextStyle(fontSize: 20, color: Color(0xff083460)),
                   decoration: InputDecoration(
                       contentPadding: EdgeInsets.fromLTRB(32, 16, 32, 16),
                       hintText: "Senha",

@@ -37,6 +37,7 @@ class _CadastroState extends State<Cadastro> {
           usuario.nome = nome;
           usuario.email = email;
           usuario.senha = senha;
+          usuario.urlImagem = "";
 
           _cadastrarUsuario(usuario);
         } else {
@@ -88,7 +89,7 @@ class _CadastroState extends State<Cadastro> {
         title: Text("Cadastro"),
       ),
       body: Container(
-        decoration: BoxDecoration(color: Color(0xff075E54)),
+        decoration: BoxDecoration(color: Color(0xffa4cefa)),
         padding: EdgeInsets.all(16),
         child: Center(
           child: SingleChildScrollView(

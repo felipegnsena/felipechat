@@ -11,8 +11,10 @@ class RouteGenerator {
 
   static Route<dynamic> generateRoute(RouteSettings settings){
 
-    final args = settings.arguments as Map<String, dynamic>;
-    Usuario contato = args as Usuario;
+    Usuario contato = Usuario();
+    if(settings.arguments != null){
+      contato = settings.arguments as Usuario;
+    }
 
     switch( settings.name ){
       case "/" :

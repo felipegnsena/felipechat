@@ -15,13 +15,15 @@ class _AbaContatosState extends State<AbaContatos> {
   late String _emailUsuarioLogado;
 
   Future<List<Usuario>> _recuperarContatos() async {
+
     FirebaseFirestore db = FirebaseFirestore.instance;
 
     QuerySnapshot querySnapshot =
         await db.collection("usuarios").get();
 
     List<Usuario> listaUsuarios = [];
-    for (DocumentSnapshot item in querySnapshot.docs) {
+
+    for (QueryDocumentSnapshot item in querySnapshot.docs) {
 
       if( item.get("email") == _emailUsuarioLogado ) continue;
 
@@ -74,6 +76,9 @@ class _AbaContatosState extends State<AbaContatos> {
             return ListView.builder(
                 itemCount: snapshot.data?.length,
                 itemBuilder: (_, indice) {
+
+                  print(snapshot);
+                  print(snapshot.data);
 
                   List<Usuario>? listaItens = snapshot.data;
                   Usuario usuario = listaItens![indice];

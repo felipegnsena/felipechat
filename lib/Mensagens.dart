@@ -210,7 +210,7 @@ class _MensagensState extends State<Mensagens> {
                     prefixIcon:
                       _subindoImagem
                         ? CircularProgressIndicator()
-                        : IconButton(icon: Icon(Icons.camera_alt),onPressed: _enviarFoto)
+                        : IconButton(icon: Icon(Icons.camera_alt,color: Color(0xff011748),),onPressed: _enviarFoto)
                 ),
               ),
             ),
@@ -221,7 +221,7 @@ class _MensagensState extends State<Mensagens> {
                   onPressed: _enviarMensagem,
                 )
               : FloatingActionButton(
-                  backgroundColor: Color(0xff075E54),
+                  backgroundColor: Color(0xff011748),
                   child: Icon(
                     Icons.send,
                     color: Colors.white,
@@ -271,10 +271,12 @@ class _MensagensState extends State<Mensagens> {
 
                       //Define cores e alinhamentos
                       Alignment alinhamento = Alignment.centerRight;
-                      Color cor = Color(0xffd2ffa5);
+                      Color cor = Color(0xff08368f);
+                      Color corTexto = Colors.white;
                       if ( _idUsuarioLogado != item["idUsuario"] ) {
                         alinhamento = Alignment.centerLeft;
                         cor = Colors.white;
+                        corTexto = Colors.black;
                       }
 
                       return Align(
@@ -290,7 +292,7 @@ class _MensagensState extends State<Mensagens> {
                                     BorderRadius.all(Radius.circular(8))),
                             child:
                             item["tipo"] == "texto"
-                                ? Text(item["mensagem"],style: TextStyle(fontSize: 18),)
+                                ? Text(item["mensagem"],style: TextStyle(fontSize: 18, color: corTexto),)
                                 : Image.network(item["urlImagem"]),
                           ),
                         ),
@@ -324,8 +326,7 @@ class _MensagensState extends State<Mensagens> {
       body: Container(
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage("imagens/bg.png"), fit: BoxFit.cover)),
+            color: Color(0xff98c6f3)),
         child: SafeArea(
             child: Container(
           padding: EdgeInsets.all(8),
